@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Manipulation Demo</title>
+    <style>
+        #box {
+            padding: 10px;
+            background-color: lightblue;
+            width: 250px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>DOM Manipulation Example</h2>
+
+    <div id="box">This is the text for verification.</div>
+    <br>
+
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeColor()">Change Color</button>
+    <button onclick="selectUsingQuery()">Select Using querySelector()</button>
+
+    <p class="info">Info paragraph 1</p>
+    <p class="info">Info paragraph 2</p>
+
+    <script>
+
+        let userName = prompt("Enter your name:");
+        alert("Hello, " + userName + "! Welcome!");
+
+        
+        function changeText() {
+            let element = document.getElementById("box");
+            element.innerHTML = "Text changed using <b>getElementById()</b>";
+        }
+
+        
+        function changeColor() {
+            let element = document.getElementById("box");
+            element.style.backgroundColor = "lightgreen";
+            element.innerHTML = "Background changed using <b>innerHTML + style</b>";
+        }
+
+        
+        function selectUsingQuery() {
+            let para = document.querySelector(".info");
+            para.innerHTML = "This was modified using <b>querySelector()</b>";
+        }
+    </script>
+
+</body>
+</html>

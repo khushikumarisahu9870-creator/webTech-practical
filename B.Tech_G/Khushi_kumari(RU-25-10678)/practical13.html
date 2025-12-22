@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User-Defined Functions & var/let/const Demo</title>
+</head>
+<body>
+
+<h2>JavaScript Functions and Scope Demo</h2>
+
+<script>
+
+
+// 1️⃣ USER-DEFINED FUNCTIONS
+
+
+// A simple function to greet a user
+function greetUser(name) {
+    alert("Hello, " + name + "! Welcome to JavaScript.");
+}
+
+// Function to add two numbers
+function addNumbers(a, b) {
+    return a + b;
+}
+
+// Invoke the functions
+let userName = prompt("Enter your name:");
+greetUser(userName);
+
+let num1 = Number(prompt("Enter first number:"));
+let num2 = Number(prompt("Enter second number:"));
+
+let result = addNumbers(num1, num2);
+alert("The sum of the numbers is: " + result);
+
+
+
+
+// 2️⃣ SCOPE DEMONSTRATION (var, let, const)
+
+
+document.write("<h3>Scope of var, let, and const:</h3>");
+
+function scopeDemo() {
+    if (true) {
+        var x = "I am var (function scoped)";
+        let y = "I am let (block scoped)";
+        const z = "I am const (block scoped & constant)";
+
+        document.write(x + "<br>");
+        document.write(y + "<br>");
+        document.write(z + "<br>");
+    }
+
+    // var works here (function scope)
+    document.write("<br>Accessing var outside block: " + x + "<br>");
+
+    // let and const do NOT work here (block scope)
+    try {
+        document.write("Accessing let outside block: " + y + "<br>");
+    } catch (error) {
+        document.write("Error: 'let' cannot be accessed outside the block.<br>");
+    }
+
+    try {
+        document.write("Accessing const outside block: " + z + "<br>");
+    } catch (error) {
+        document.write("Error: 'const' cannot be accessed outside the block.<br>");
+    }
+}
+
+scopeDemo();
+
+</script>
+
+</body>
+</html>

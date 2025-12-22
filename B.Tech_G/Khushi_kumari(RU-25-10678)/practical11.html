@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Arithmetic Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .calculator {
+            background: white;
+            padding: 20px;
+            width: 320px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #2196f3;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0d47a1;
+        }
+
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h2>Basic Arithmetic Calculator</h2>
+
+        <!--User Input-->
+        <input type="number" id="num1" placeholder="Enter first number">
+        <input type="number" id="num2" placeholder="Enter second number">
+
+        <button onclick="calculate()">Calculate</button>
+
+        <!-- Display Results -->
+        <div class="result" id="output"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            // Get values from input boxes
+            let a = Number(document.getElementById("num1").value);
+            let b = Number(document.getElementById("num2").value);
+
+            // Perform operations
+            let sum = a + b;
+            let diff = a - b;
+            let product = a * b;
+            let division = b !== 0 ? (a / b) : "Cannot divide by zero";
+
+            // Display the results
+            document.getElementById("output").innerHTML =
+                "Sum: " + sum + "<br>" +
+                "Difference: " + diff + "<br>" +
+                "Product: " + product + "<br>" +
+                "Division: " + division;
+        }
+    </script>
+
+</body>
+</html>

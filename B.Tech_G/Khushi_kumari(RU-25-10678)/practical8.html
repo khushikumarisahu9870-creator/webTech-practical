@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding CSS Selectors (Easy & Unique)</title>
+  <style>
+    /* =============== Universal Selector =============== */
+    * {
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f0f7ff;
+      padding: 30px;
+    }
+
+    header {
+      text-align: center;
+      background: #0077cc;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+    }
+
+    /* =============== Class Selector =============== */
+    .note {
+      background-color: #fff9c4;
+      border-left: 5px solid #fbc02d;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+
+    /* =============== ID Selector =============== */
+    #unique-box {
+      background-color: #e1f5fe;
+      border-left: 5px solid #0288d1;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    /* =============== Descendant Selector =============== */
+    .article p {
+      color: #333;
+      margin-top: 10px;
+      line-height: 1.6;
+    }
+
+    .article span {
+      color: #0077cc;
+      font-weight: bold;
+    }
+
+    /* =============== Group Selector =============== */
+    h2, h3 {
+      color: #0077cc;
+      margin-bottom: 8px;
+    }
+
+    /* Box styling for visual clarity */
+    section {
+      background: white;
+      border: 2px solid #0077cc;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors Simplified</h1>
+    <p>Universal, Class, ID, Descendant & Group Selectors</p>
+  </header>
+
+  <!-- Universal Selector Example -->
+  <section>
+    <h2>1. Universal Selector (*)</h2>
+    <p>This selector applies styles to <strong>all elements</strong> on the page — 
+      here it sets the same font and removes default margins and padding for every element.</p>
+  </section>
+
+  <!-- Class Selector Example -->
+  <section class="note">
+    <h2>2. Class Selector (.classname)</h2>
+    <p>Used when you want to apply the same style to <strong>many elements</strong>.  
+      For example, this yellow box uses the class <code>note</code>.</p>
+  </section>
+
+  <!-- ID Selector Example -->
+  <section id="unique-box">
+    <h2>3. ID Selector (#id)</h2>
+    <p>Used for <strong>only one unique element</strong> in a page.  
+      This blue box has an ID called <code>unique-box</code>.</p>
+  </section>
+
+  <!-- Descendant Selector Example -->
+  <section class="article">
+    <h2>4. Descendant Selector (parent child)</h2>
+    <p>This rule styles elements that are <span>inside another element</span>.  
+      For example, <code>.article p</code> changes the paragraph text color only inside this section.</p>
+  </section>
+
+  <!-- Group Selector Example -->
+  <section>
+    <h2>5. Group Selector (h2, h3)</h2>
+    <h3>This heading shares same color as h2</h3>
+    <p>Group selectors style <strong>multiple tags together</strong> at once, reducing repetition in your CSS.</p>
+  </section>
+
+</body>
+</html>

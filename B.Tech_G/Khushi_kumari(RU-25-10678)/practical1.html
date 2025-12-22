@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Basic HTML — Headings, Paragraphs & Text Formatting</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Arial, sans-serif; line-height: 1.6; padding: 2rem; max-width: 900px;
+       margin: auto; }
+    header { border-bottom: 1px solid #ddd; padding-bottom: 1rem; margin-bottom: 1.25rem; }
+    pre { background:#f6f6f6; padding: .75rem; border-radius: 6px; overflow:auto; }
+    code { font-family: monospace; background:#f3f3f3; padding: .1rem .3rem; border-radius:4px; }
+    section { margin-bottom: 1.25rem; }
+    footer { font-size: .9rem; color: #555; border-top: 1px solid #eee; padding-top: .75rem; margin-top: 1.25rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Basic HTML: Headings, Paragraphs & Text Formatting</h1>
+    <p>A short example page showing how to use headings (<code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>), paragraphs, 
+      and inline text-formatting tags.</p>
+  </header>
+
+  <section>
+    <h2>Headings (h1 — h6)</h2>
+    <p>Headings define the structure of your document. Use <code>&lt;h1&gt;</code> for the page title and smaller
+      numbers for sub-sections.</p>
+    <h1>Heading level 1 (&lt;h1&gt;)</h1>
+    <h2>Heading level 2 (&lt;h2&gt;)</h2>
+    <h3>Heading level 3 (&lt;h3&gt;)</h3>
+    <h4>Heading level 4 (&lt;h4&gt;)</h4>
+    <h5>Heading level 5 (&lt;h5&gt;)</h5>
+    <h6>Heading level 6 (&lt;h6&gt;)</h6>
+  </section>
+
+  <section>
+    <h2>Paragraphs and line breaks</h2>
+    <p>This is a paragraph created with the <code>&lt;p&gt;</code> tag. Paragraphs automatically add spacing before
+       and after blocks of text.</p>
+    <p>If you need a single line break without starting a new paragraph, use the <code>&lt;br&gt;</code> tag.<br>Here
+       is a new line inside the same paragraph after a <code>&lt;br&gt;</code>.</p>
+  </section>
+
+  <section>
+    <h2>Common inline text-formatting tags</h2>
+    <p><strong>&lt;strong&gt;</strong> — indicates strong importance (usually bold).</p>
+    <p><em>&lt;em&gt;</em> — emphasizes text (usually italic).</p>
+    <p><u>&lt;u&gt;</u> — shows an underline (use sparingly for readability).</p>
+    <p><small>&lt;small&gt;</small> — smaller print for fine text.</p>
+    <p><mark>&lt;mark&gt;</mark> — highlights text (like a marker).</p>
+    <p><del>&lt;del&gt;</del> — deleted/removed text; <ins>&lt;ins&gt;</ins> — inserted text.</p>
+    <p>Use <code>&lt;sub&gt;</code> and <code>&lt;sup&gt;</code> for subscript and superscript: H<sub>2</sub>O and x<sup>2</sup>.</p>
+    <p>Inline code: <code>&lt;code&gt;const x = 10;</code> — use the <code>&lt;code&gt;</code> tag for short code snippets.</p>
+  </section>
+
+  <section>
+    <h2>Block-level text tags</h2>
+    <p><strong>Blockquote</strong> — use <code>&lt;blockquote&gt;</code> for quoted content:</p>
+    <blockquote>
+      <p>“This is an example blockquote. It’s used to show quoted or cited text.”</p>
+    </blockquote>
+
+    <p><strong>Preformatted text</strong> — use <code>&lt;pre&gt;</code> for preserved spacing and line breaks
+       (great for code blocks):</p>
+    <pre><code>&lt;!doctype html&gt;
+&lt;html&gt;...
+</code></pre>
+  </section>
+
+  <section>
+    <h2>Lists (ordered and unordered)</h2>
+    <p>Unordered list:</p>
+    <ul>
+      <li>Item one</li>
+      <li>Item two</li>
+    </ul>
+
+    <p>Ordered list:</p>
+    <ol>
+      <li>First</li>
+      <li>Second</li>
+    </ol>
+  </section>
+
+  <footer>
+    <p>Tip: Keep content semantic — use the right tags for meaning, not just appearance. You can style these tags with CSS to change how they look.</p>
+  </footer>
+</body>
+</html>

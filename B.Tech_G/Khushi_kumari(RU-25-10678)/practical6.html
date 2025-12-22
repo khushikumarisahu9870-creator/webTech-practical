@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inline, Internal & External CSS Example</title>
+  <!-- External CSS link -->
+  <link rel="stylesheet" href="practical6.css">
+  <!-- Internal CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7faff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #00cc0e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    section {
+      background-color: #ffffff;
+      margin: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      color: #00cc44;
+      border-bottom: 2px solid #2ccc00;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Inline, Internal & External CSS</h1>
+    <p>Example of all three CSS styles in one webpage</p>
+  </header>
+  <section>
+    <h2>1 Inline CSS</h2>
+    <p style="color: green; font-weight: bold; background-color: #eaffea; padding: 10px;">
+      This text uses <strong>inline CSS</strong> — applied directly inside the HTML tag using the <code>style</code> attribute.
+    </p>
+  </section>
+  <section>
+    <h2>2 Internal CSS</h2>
+    <p>
+      Internal CSS is written inside the <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> section.
+      It affects all elements that match the defined CSS rules.
+    </p>
+  </section>
+  <section class="external-style">
+    <h2>3 External CSS</h2>
+    <p>
+      External CSS is stored in a separate file (like <code>style.css</code>) and linked using the <code>&lt;link&gt;</code> tag.
+      It keeps HTML clean and allows styling multiple pages with one stylesheet.
+    </p>
+  </section>-
+  <footer>
+    <p style="text-align:center; background-color:#00cc29; color:white; padding:10px; border-radius:0 0 8px 8px;">
+      © 2025 CSS Demo | Designed by You
+    </p>
+  </footer>
+</body>
+</html>

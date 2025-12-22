@@ -1,0 +1,12 @@
+/* External CSS */
+.external-style {
+  background-color: #fff8e1;
+  border: 2px dashed #ff9800;
+  color: #555;
+}
+
+.external-style p {
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}

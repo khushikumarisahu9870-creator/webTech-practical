@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation Example</title>
+    <style>
+        input {
+            margin: 6px 0;
+            padding: 8px;
+            width: 250px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Form Validation Using JavaScript</h2>
+
+<form id="myForm" onsubmit="return validateForm()">
+
+    
+    <label>Name:</label><br>
+    <input type="text" id="name" oninput="clearError('nameError')">
+    <div id="nameError" class="error"></div>
+    <br>
+
+   
+    <label>Email:</label><br>
+    <input type="text" id="email" oninput="clearError('emailError')">
+    <div id="emailError" class="error"></div>
+    <br>
+
+    
+    <label>Password:</label><br>
+    <input type="password" id="password" oninput="clearError('passwordError')">
+    <div id="passwordError" class="error"></div>
+    <br>
+
+    <button type="submit">Submit</button>
+</form>
+
+
+<script>
+function clearError(id) {
+    document.getElementById(id).innerHTML = "";
+}
+
+function validateForm() {
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    let isValid = true;
+
+    // Name validation
+    if (name === "") {
+        document.getElementById("nameError").innerHTML = "Name cannot be empty!";
+        isValid = false;
+    }
+
+    // Email validation (simple pattern)
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === "") {
+        document.getElementById("emailError").innerHTML = "Email is required!";
+        isValid = false;
+    } else if (!emailPattern.test(email)) {
+        document.getElementById("emailError").innerHTML = "Enter a valid email!";
+        isValid = false;
+    }
+
+    // Password validation
+    if (password.length < 6) {
+        document.getElementById("passwordError").innerHTML = 
+            "Password must be at least 6 characters!";
+        isValid = false;
+    }
+
+    // If form is valid
+    if (isValid) {
+        alert("Form submitted successfully!");
+        return true;   // allow form to submit
+    } else {
+        alert("Please correct the errors before submitting.");
+        return false;  // block form submission
+    }
+}
+
+</script>
+
+</body>
+</html>
