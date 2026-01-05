@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colorful Event Listener Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(120deg, #89f7fe, #66a6ff);
+            min-height: 100vh;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #222;
+        }
+
+        #box {
+            width: 300px;
+            height: 180px;
+            margin: 30px auto;
+            background-color: #ff9a9e;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .active {
+            transform: scale(1.1) rotate(3deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        input {
+            padding: 10px;
+            width: 280px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 8px;
+            border: none;
+            border-radius: 20px;
+            background: #333;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff6f61;
+            transform: scale(1.05);
+        }
+
+        #output {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #222;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🌈 Colorful & Dynamic Event Listeners</h2>
+
+    <button id="addEvents">Add Events</button>
+    <button id="removeEvents">Remove Events</button>
+
+    <div id="box">Hover / Click Me</div>
+
+    <input type="text" id="textInput" placeholder="Type something..." />
+    <p id="output"></p>
+
+    <script>
+        const box = document.getElementById("box");
+        const input = document.getElementById("textInput");
+        const output = document.getElementById("output");
+
+        // Generate random color
+        function randomColor() {
+            return "#" + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        // Mouse event handlers
+        function mouseOverHandler() {
+            box.style.backgroundColor = randomColor();
+            box.textContent = "Mouse Over 😄";
+            box.classList.add("active");
+        }
+
+        function mouseOutHandler() {
+            box.textContent = "Mouse Out 👋";
+            box.classList.remove("active");
+        }
+
+        function clickHandler() {
+            box.style.backgroundColor = randomColor();
+            box.textContent = "Clicked 🎉";
+        }
+
+        // Add event listeners
+        document.getElementById("addEvents").addEventListener("click", () => {
+            box.addEventListener("mouseover", mouseOverHandler);
+            box.addEventListener("mouseout", mouseOutHandler);
+            box.addEventListener("click", clickHandler);
+            box.textContent = "Events Added ✅";
+        });
+
+        // Remove event listeners
+        document.getElementById("removeEvents").addEventListener("click", () => {
+            box.removeEventListener("mouseover", mouseOverHandler);
+            box.removeEventListener("mouseout", mouseOutHandler);
+            box.removeEventListener("click", clickHandler);
+            box.textContent = "Events Removed ❌";
+        });
+
+        // Keyboard event
+        input.addEventListener("keyup", (event) => {
+            output.textContent = "You typed: " + event.target.value;
+            output.style.color = randomColor();
+        });
+    </script>
+
+</body>
+</html>

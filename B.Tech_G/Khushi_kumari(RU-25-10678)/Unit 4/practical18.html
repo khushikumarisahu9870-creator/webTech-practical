@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Manipulation Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            text-align: center;
+            padding: 30px;
+            min-height: 100vh;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        #container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background: #6a11cb;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        li:hover {
+            transform: scale(1.05);
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 6px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            background: #333;
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff6f61;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>✨ Create & Manipulate Elements using JavaScript</h2>
+
+    <div id="container">
+        <button onclick="addItem()">Add Item</button>
+        <button onclick="removeItem()">Remove Last Item</button>
+        <button onclick="modifyItem()">Modify First Item</button>
+
+        <ul id="list"></ul>
+    </div>
+
+    <script>
+        const list = document.getElementById("list");
+        let count = 1;
+
+        // Create and append a new element
+        function addItem() {
+            const li = document.createElement("li");   // create element
+            li.textContent = "Item " + count;           // modify content
+            list.appendChild(li);                       // append child
+            count++;
+        }
+
+        // Remove last child element
+        function removeItem() {
+            if (list.lastChild) {
+                list.removeChild(list.lastChild);
+                count--;
+            }
+        }
+
+        // Modify existing child element
+        function modifyItem() {
+            if (list.firstChild) {
+                list.firstChild.textContent = "Modified Item ⭐";
+                list.firstChild.style.background = "linear-gradient(to right, #ff512f, #dd2476)";
+            }
+        }
+    </script>
+
+</body>
+</html>

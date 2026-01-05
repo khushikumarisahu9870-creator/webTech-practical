@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show and Hide Elements using JavaScript</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Box style */
+        #box {
+            width: 300px;
+            height: 150px;
+            background-color: lightblue;
+            border: 2px solid #333;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        /* Hidden class */
+        .hidden {
+            display: none;
+        }
+
+        /* Toggle style class */
+        .highlight {
+            background-color: yellow;
+            color: red;
+            font-weight: bold;
+            border: 3px dashed red;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Show / Hide Elements & Toggle CSS Class</h2>
+
+    <button onclick="showBox()">Show</button>
+    <button onclick="hideBox()">Hide</button>
+    <button onclick="toggleBox()">Toggle Show/Hide</button>
+    <button onclick="toggleStyle()">Toggle Style</button>
+
+    <div id="box">
+        This is a sample box.<br>
+        JavaScript controls my visibility and style!
+    </div>
+
+    <script>
+        // Show the element
+        function showBox() {
+            document.getElementById("box").classList.remove("hidden");
+        }
+
+        // Hide the element
+        function hideBox() {
+            document.getElementById("box").classList.add("hidden");
+        }
+
+        // Toggle show/hide
+        function toggleBox() {
+            document.getElementById("box").classList.toggle("hidden");
+        }
+
+        // Toggle CSS class dynamically
+        function toggleStyle() {
+            document.getElementById("box").classList.toggle("highlight");
+        }
+    </script>
+
+</body>
+</html>
